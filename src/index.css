@@ -1,13 +1,710 @@
-body {
+@import "https://fonts.googleapis.com/css2?family=Georama:wght@500;800&family=Montserrat&family=Poppins:wght@600;800;900&display=swap";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "Georama", sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@font-face {
+  font-family: "lp";
+  src: url("./static/fonts/lp.eot?2786197");
+  src: url("./static/fonts/lp.eot?2786197#iefix") format("embedded-opentype"),
+    url("./static/fonts/lp.woff2?2786197") format("woff2"),
+    url("./static/fonts/lp.woff?2786197") format("woff"),
+    url("./static/fonts/lp.ttf?2786197") format("truetype"),
+    url("./static/fonts/lp.svg?2786197#lp") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "lp";
+    src: url("./static/fonts/lp.svg?2786197#lp") format("svg");
+  }
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "lp";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-discord:before {
+  content: "\31";
+} /* '1' */
+.icon-instagram:before {
+  content: "\32";
+} /* '2' */
+.icon-twitter:before {
+  content: "\33";
+} /* '3' */
+.icon-telegram:before {
+  content: "\34";
+} /* '4' */
+
+.container {
+  max-width: 950px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header {
+  padding-top: 60px;
+  background: #e466f9 url("./static/img/header-bg.svg") top center no-repeat;
+  background-size: auto 100%;
+  max-height: 545px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header__inner {
+  max-width: 485px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+.header__menu {
+  background: #000;
+}
+.header__menu .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 77px;
+}
+
+.header__logo {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 71px;
+  letter-spacing: 0px;
+}
+
+.header__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.header__image {
+  margin-top: 24px;
+}
+
+.headAction {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.headAction__inner {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.headAction__title {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.headAction__title + .actionForm {
+  margin-top: 30px;
+}
+
+.actionForm {
+  text-align: center;
+  position: relative;
+}
+
+.actionForm__button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 16px 32px;
+  max-width: 235px;
+  width: 100%;
+  min-height: 60px;
+  background: #0085ff;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  border: none;
+}
+
+.actionForm__button--disabled {
+  background: #b0b0b0;
+}
+
+.actionForm__button--small {
+  max-width: 220px;
+}
+
+.actionForm__note {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(30, 29, 32, 0.5);
+}
+
+.actionForm__note + .actionForm__note {
+  margin-top: 0;
+}
+
+.example {
+  margin-top: 55px;
+  text-align: center;
+}
+
+.example__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #1e1d20;
+}
+
+.example__list {
+  display: grid;
+  grid-gap: 25px 10px;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  max-width: 850px;
+  margin: 20px auto 0;
+}
+
+.example__name {
+  margin-top: 7px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(30, 29, 32, 0.7);
+}
+
+.note {
+  margin-top: 80px;
+}
+
+.note__inner {
+  padding: 60px 0;
+  border-top: 2px solid rgba(196, 196, 196, 0.3);
+  border-bottom: 2px solid rgba(196, 196, 196, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  grid-gap: 45px;
+}
+
+.note__flag {
+  max-width: 275px;
+  width: 100%;
+}
+
+.note__title {
+  width: calc(850px - 320px);
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #1e1d20;
+}
+
+.note__title span {
+  color: #1768d1;
+}
+
+.collection {
+  margin-top: 60px;
+}
+
+.collection__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-gap: 20px 100px;
+}
+
+.collection__info {
+  width: calc(850px - 350px);
+}
+
+.collection__title {
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.collection__text {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.collection__link {
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #1890ff;
+  text-decoration: underline;
+}
+
+.collection__link:hover {
+  text-decoration: none;
+}
+
+.collection__image {
+  max-width: 250px;
+  width: 100%;
+}
+
+.footerAction {
+  margin-top: 180px;
+}
+
+.footerAction__inner {
+  padding: 50px 50px 0;
+  border: 4px solid #ffc1c1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.footerAction__subtitle {
+  margin-top: 35px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(30, 29, 32, 0.7);
+}
+
+.footerAction__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #1e1d20;
+  max-width: 370px;
+  margin: 17px auto 0;
+}
+
+.footerAction__title + .actionForm {
+  margin-top: 30px;
+}
+
+.footerAction__image--last {
+  margin: -40px 0 -90px;
+}
+
+.footerAction__image--absolute {
+  position: absolute;
+}
+
+.footerAction__image--left {
+  top: 45px;
+  left: -48px;
+}
+
+.footerAction__image--right {
+  top: -98px;
+  right: -64px;
+}
+
+.footer {
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(#17161b),
+      to(#17161b)
+    ),
+    -webkit-gradient(linear, left bottom, left top, from(#26232f), to(#26232f));
+  background: -o-linear-gradient(bottom, #17161b, #17161b),
+    -o-linear-gradient(bottom, #26232f, #26232f);
+  background: linear-gradient(0deg, #17161b, #17161b),
+    linear-gradient(0deg, #26232f, #26232f);
+  margin-top: 180px;
+  padding: 60px 0 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.footer__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer__social {
+  margin-top: 46px;
+}
+
+.footer__socialItem {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__socialItem + .footer__socialItem {
+  margin-left: 48px;
+}
+
+.footer__socialItem:hover {
+  color: #1890ff;
+}
+
+.footer__copyright {
+  margin-top: 35px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 1024px) {
+  .note__inner {
+    text-align: center;
+  }
+
+  .note__title {
+    width: 100%;
+  }
+
+  .collection__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .collection__info {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    background: #e466f9;
+    max-height: unset;
+    padding-top: 40px;
+  }
+
+  .header__subtitle {
+    font-size: 17px;
+  }
+
+  .header__image {
+    margin-top: 15px;
+    max-width: 240px;
+  }
+
+  .header__logo {
+    font-size: 18px;
+  }
+
+  .actionForm__button--small {
+    max-width: 170px;
+    padding: 9px 15px;
+    min-height: 16px;
+  }
+
+  .headAction__title {
+    font-size: 17px;
+  }
+
+  .example__title {
+    font-size: 36px;
+  }
+
+  .note {
+    margin-top: 50px;
+  }
+
+  .note__inner {
+    padding: 30px 0;
+    grid-gap: 30px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .note__flag {
+    max-width: 136px;
+    margin: 0 auto;
+  }
+
+  .note__title {
+    font-size: 36px;
+  }
+
+  .collection__image {
+    max-width: 150px;
+  }
+
+  .collection__title {
+    font-size: 36px;
+  }
+
+  .footerAction {
+    margin-top: 40px;
+  }
+
+  .footerAction__inner {
+    padding: 60px 20px 0;
+  }
+
+  .footerAction__image--absolute {
+    display: none;
+  }
+
+  .footerAction__image--first {
+    max-width: 160px;
+    width: 100%;
+  }
+
+  .footerAction__image--last {
+    margin: 0 0 -38px;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .footerAction__title {
+    font-size: 36px;
+    max-width: 280px;
+  }
+
+  .footer {
+    margin-top: 105px;
+  }
 }
