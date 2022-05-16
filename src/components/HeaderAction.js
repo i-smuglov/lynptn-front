@@ -3,7 +3,7 @@ const HeaderAction = () => (
     <div className="container">
       <div className="headAction__inner">
         <div className="headAction__title">
-          All funds from the sale will be donated to support Ukraine
+          80% of funds from the sale will be donated to support Ukraine
         </div>
         <div className="actionForm">
           <a

@@ -6,7 +6,7 @@ const Note = () => (
       <div className="note__inner">
         <img src={flagImgSrc} alt="Ukraine flag" className="note__flag" />
         <div className="note__title">
-          All funds from the sale will be donated to{" "}
+          80$ of funds from the sale will be donated to{" "}
           <span>support Ukraine</span>
         </div>
       </div>
