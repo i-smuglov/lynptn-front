@@ -1,12 +1,26 @@
+import { useContext } from "react";
+import { Web3Context } from "../web3";
 import headerImgSrc from "../static/img/header-img.svg";
 
-const Header = () => [
+export const shortenAddress = (address) => address && `${address.substring(0, 5)}...${address.substring(address.length - 3, address.length)}`;
+
+const Header = () => {
+  const { wallet, connectWeb3, logout } = useContext(Web3Context);
+  return [
   <div className="header__menu">
     <div className="container">
       <div className="header__logo">LYING PUTIN</div>
-      <a href="#" className="actionForm__button actionForm__button--small">
-        Connect wallet
-      </a>
+      {wallet == null ? (
+        <a href="#" className="actionForm__button actionForm__button--small" onClick={connectWeb3}>
+          Connect wallet
+        </a>
+      ) : (
+        <a href="#" onClick={logout}
+        style={{
+          color: '#ffffff'
+        }}
+        >Logout ({shortenAddress(wallet.address)})</a>
+      )}
     </div>
   </div>,
 
@@ -22,6 +36,6 @@ const Header = () => [
       </div>
     </div>
   </header>,
-];
+]};
 
 export default Header;

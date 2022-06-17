@@ -1,4 +1,10 @@
-const HeaderAction = () => (
+import { useContext } from 'react';
+import { mintNFT } from '../web3/mint';
+import { Web3Context } from '../web3';
+
+const HeaderAction = () => {
+  const { web3, wallet } = useContext(Web3Context);
+  return (
   <section className="headAction">
     <div className="container">
       <div className="headAction__inner">
@@ -7,8 +13,8 @@ const HeaderAction = () => (
         </div>
         <div className="actionForm">
           <a
-            href="#"
-            className="actionForm__button actionForm__button--disabled"
+            className={`actionForm__button ${!wallet && "actionForm__button--disabled"}`}
+            onClick={() => mintNFT(web3, wallet)}
           >
             Mint
           </a>
@@ -18,6 +24,6 @@ const HeaderAction = () => (
       </div>
     </div>
   </section>
-);
+)};
 
 export default HeaderAction;
