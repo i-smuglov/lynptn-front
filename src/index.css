@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Georama:wght@500;800&family=Montserrat&family=Poppins:wght@600;800;900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Georama:wght@400;500;800&family=Montserrat&family=Poppins:wght@600;800;900&display=swap";
 
 html,
 body,
@@ -212,6 +212,180 @@ table {
   box-sizing: border-box;
 }
 
+.mint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.mint__header {
+  display: flex;
+  background-color: #f8f8f8;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mint__header-text {
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.464286px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.mint__header-close {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("./img/close.svg");
+}
+
+.mint__popup {
+  width: 428px;
+}
+
+@media (max-width: 500px) {
+  .mint__popup {
+    zoom: 0.7;
+  }
+}
+
+.mint__content {
+  padding: 72px 40px 60px 40px;
+  background-color: #fff;
+}
+
+.mint__content-text {
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #36373b;
+  line-height: 158.47%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  letter-spacing: 0.464286px;
+}
+
+.mint__calc {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.mint__calc-btn {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #b1b1b1;
+  border-radius: 2px;
+  flex-shrink: 0;
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25.128px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: #717171;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mint__calc-btn:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.mint__calc-btn_left {
+  margin-right: 10px;
+}
+
+.mint__calc-btn_right {
+  margin-left: 10px;
+}
+
+.mint__calc-input {
+  width: 100%;
+  border: 1px solid #b1b1b1;
+  border-radius: 2px;
+  text-align: center;
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.mint__price {
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.464286px;
+  opacity: 0.5;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+.mint hr {
+  border-top: 1px solid #b1b1b1;
+  margin: 0;
+  margin-bottom: 19px;
+}
+
+.mint__submit {
+  background: #1890ff;
+  border-radius: 6px;
+  color: #fff;
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 37px;
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
 .header {
   padding-top: 60px;
   background: #e466f9 url("./static/img/header-bg.svg") top center no-repeat;
@@ -320,6 +494,7 @@ table {
   letter-spacing: 0.02em;
   color: #ffffff;
   border: none;
+  cursor: pointer;
 }
 
 .actionForm__button--disabled {
